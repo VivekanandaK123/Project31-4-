@@ -22,14 +22,20 @@ function setup() {
  }
 
  for (var j = 40; j <= width; j=j+50){
-   plinkos.push(new Plinko(j,75));
+   plinkos.push(new Plinko(j,75,7));
  }
 
  for (var j = 15; j <= width - 10; j=j+50){
-  plinkos.push(new Plinko(j,175));
+  plinkos.push(new Plinko(j,175,7));
  }
 
- 
+ for (var j = 40; j <= width; j=j+50){
+  plinkos.push(new Plinko(j,275,7));
+}
+
+for (var j = 15; j <= width - 10; j=j+50){
+ plinkos.push(new Plinko(j,375,7));
+}
  
 }
 
@@ -47,6 +53,14 @@ function draw() {
   
    for (var k = 0; k < divisions.length; k++){
     divisions[k].display();
+   }
+
+   for (var k = 0; k < plinkos.length; k++){
+    plinkos[k].display();
+   }
+
+   if(frameCount%30===0){
+     particles.push(new Particle(random(width/2-10,width/2+10),10,7));
    }
   
 }
