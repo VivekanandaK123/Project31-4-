@@ -47,6 +47,10 @@ function draw() {
 
   ground.display();
 
+  if(frameCount%45===0){
+    particles.push(new Particle(random(width/2-10,width/2+10),10,7));
+  }
+
   for (var j = 0; j < particles.length; j++){
     particles[j].display();
    }
@@ -59,8 +63,6 @@ function draw() {
     plinkos[k].display();
    }
 
-   if(frameCount%30===0){
-     particles.push(new Particle(random(width/2-10,width/2+10),10,7));
-   }
+   
   
 }
